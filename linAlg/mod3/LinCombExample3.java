@@ -11,8 +11,8 @@ public class LinCombExample3 {
 	double[] z = {7.5,10};
 	double epsilon = 0.001;
 
-	for (double alpha=0; alpha<=10; alpha+=0.1) {
-	    for (double beta=0; beta<=10; beta+=0.1) {
+	for (double alpha=0; alpha<=10000; alpha+=0.1) {
+	    for (double beta=0; beta<=10000; beta+=0.1) {
 		// See if alpha*u + beta*v is approximately z.
 
 			double[] u_alpha = scalarMult (alpha, u);
