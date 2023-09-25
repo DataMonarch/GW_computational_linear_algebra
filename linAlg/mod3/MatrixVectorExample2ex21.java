@@ -95,14 +95,23 @@ public class MatrixVectorExample2ex21 {
 
     static double[] matrixVectorMult (double[][] A, double[] v)
     {
+		// Get the number of rows of matrix A
+		int rowsA = A.length;
+
+		// Check if the matrix A and vector v can be multiplied
+		if (A[0].length != v.length) {
+			throw new IllegalArgumentException("Number of columns of A must be equal to the number of rows of v");
+		}
+	
 		// Compute the product of A and v and return the result.
-		double[] result = new double[v.length];
-		for (int i = 0; i < v.length; i++) {
+		double[] result = new double[rowsA];
+		for (int i = 0; i < rowsA; i++) {
+			result[i] = 0;
 			for (int j = 0; j < v.length; j++) {
 				result[i] += A[i][j] * v[j];
 			}
 		}
-
+	
 		return result;
     }
 
